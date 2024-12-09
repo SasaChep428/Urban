@@ -3,13 +3,13 @@ primes = []
 not_primes = []
 for flag_1 in numbers:
     if flag_1 != 1:
-        for flag_2 in range(2, flag_1):
-            if flag_1 % flag_2 == 0:
+        for flag_2 in range(2, flag_1+1):
+            if flag_1 - flag_2 == 0:
+                print(flag_1, "true")
+                primes.append(flag_1)
+            elif flag_1 % flag_2 == 0:
                 print(flag_1, "false")
                 not_primes.append(flag_1)
                 break
-            elif flag_1 - flag_2 == 1:
-                print(flag_1, "true")
-                primes.append(flag_1)
 print(primes)
 print(not_primes)
